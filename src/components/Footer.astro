@@ -21,29 +21,10 @@ const socialLinks = [
 ];
 ---
 
-<footer class="border-t border-zinc-800 py-12">
+<footer class="border-t border-dark-800 py-12">
   <div class="container flex flex-col items-center gap-8">
-    <div class="flex items-center space-x-6">
-      {
-        socialLinks.map(({ name, url, icon }) => (
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-zinc-400 hover:text-white transition-colors duration-200 text-xl"
-            aria-label={name}
-          >
-            <span class={icon} />
-          </a>
-        ))
-      }
-    </div>
-    <p class="text-zinc-400 text-sm">
-      © {currentYear} Your Name. Built with <a
-        href="https://astro.build"
-        class="text-white hover:text-zinc-300 transition-colors duration-200"
-        >Astro</a
-      >
+    <p class="text-dark-400 text-sm">
+      © {currentYear} Milos Arsic. All rights reserved.
     </p>
   </div>
 </footer>
