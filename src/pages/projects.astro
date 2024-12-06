@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const projects = [
+  {
+    title: "Looty.fi",
+    description: "A rewarding mechanism on EVM chains (Avalanche, BSC) featuring NFT-based rewards system. Led product development and engineering, achieving significant organic growth through user engagement and streaming content.",
+    tags: ["Solidity", "React", "Node.js", "Web3", "NFTs"],
+    link: "#"
+  },
+  {
+    title: "DAO Governance Platform",
+    description: "Built a comprehensive DAO governance and treasury management platform on Solana blockchain at Unique VC, enabling secure fund management and customizable governance structures.",
+    tags: ["Solana", "React", "TypeScript", "Web3"],
+    link: "#"
+  },
+  {
+    title: "B2B Customer Portal",
+    description: "Developed a multi-tenant B2B portal at Lotusflare for mobile operators, featuring microservices architecture with modules for charging, services, products, and analytics.",
+    tags: ["Microservices", "React", "Node.js", "PostgreSQL"],
+    link: "#"
+  },
+  {
+    title: "Virtual Store Experience",
+    description: "Led R&D project creating an immersive virtual store in Unreal Engine, showcasing mobile devices and cellular plans in an interactive 3D environment.",
+    tags: ["Unreal Engine", "3D", "UI/UX", "C++"],
+    link: "#"
+  }
+];
+---
+
+<Layout title="Projects - Product Engineer Portfolio">
+  <div class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold mb-8">Featured Projects</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {projects.map(project => (
+        <ProjectCard {...project} />
+      ))}
+    </div>
+  </div>
+</Layout>

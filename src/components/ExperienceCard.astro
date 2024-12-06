@@ -1,0 +1,27 @@
+---
+import { Calendar, Building2 } from 'lucide-astro';
+import type { Experience } from '../data/experience';
+
+interface Props {
+  experience: Experience;
+}
+
+const { experience } = Astro.props;
+---
+
+<div class="bg-dark-800 rounded-lg p-6 border border-dark-700 hover:border-primary transition-all duration-300 hover-lift">
+  <div class="flex justify-between items-start mb-4">
+    <div>
+      <div class="flex items-center space-x-2 mb-2">
+        <Building2 size={20} class="text-primary transform transition-transform group-hover:rotate-12" />
+        <h3 class="text-xl font-space font-bold text-white group-hover:text-primary transition-colors">{experience.company}</h3>
+      </div>
+      <p class="text-primary font-space transition-colors">{experience.role}</p>
+    </div>
+    <div class="flex items-center space-x-2 text-gray-400">
+      <Calendar size={16} class="transform transition-transform group-hover:rotate-12" />
+      <span class="text-sm font-space">{experience.period}</span>
+    </div>
+  </div>
+  <p class="text-gray-300 font-inter leading-relaxed">{experience.description}</p>
+</div>
