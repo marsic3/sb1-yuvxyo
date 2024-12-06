@@ -1,44 +1,154 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ExperienceCard from '../components/ExperienceCard.astro';
-import EducationCard from '../components/EducationCard.astro';
-import { experiences } from '../data/experience';
+import Layout from "../layouts/Layout.astro";
+import ExperienceCard from "../components/ExperienceCard.astro";
+import EducationCard from "../components/EducationCard.astro";
+import { experiences } from "../data/experience";
+import { Github, Linkedin, Mail, Twitter } from "lucide-astro";
 
 const skills = [
   "JavaScript",
   "TypeScript",
   "React",
+  "Next.js",
+  "Astro",
+  "Vite",
+  "Vue",
   "Node.js",
   "Solana",
   "EVM",
+  "Blockchain",
+  "AI",
   "Unreal Engine",
   "Microservices",
   "Project Management",
-  "Full Stack Development"
 ];
 ---
 
 <Layout title="Product Engineer - Portfolio">
   <div class="max-w-4xl mx-auto px-4 py-12">
-    <section class="text-center mb-16">
-      <img 
-        src="https://via.placeholder.com/150"
-        alt="Profile Picture"
-        class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-primary"
-      />
-      <h1 class="text-4xl font-space font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-        Product Engineer
-      </h1>
-      <h2 class="text-2xl text-gray-300 mb-6 font-space">8+ Years of Experience</h2>
-      <div class="text-gray-300 max-w-3xl mx-auto font-inter space-y-4">
-        <p class="leading-relaxed">
-          Tech enthusiast at heart, I get excited about building tools and software that make a real difference. I've spent years helping SaaS products grow from good to great, always focusing on what makes users tick. When I take on a product or feature, I make it my own – diving deep into the details while keeping the big picture in mind.
-        </p>
-        <p class="leading-relaxed">
-          I love rolling up my sleeves alongside my team, showing rather than telling how to get things done. Nothing makes me happier than seeing team members grow and succeed through our shared commitment to excellence. I'm always eager to explore new technologies and currently, I'm particularly fascinated by the possibilities in blockchain. You'll find me at my best when I'm solving complex problems, whether that's scaling products or finding creative ways to engage users.
-        </p>
+    <section
+      class="flex flex-col items-start justify-between text-center mb-16"
+    >
+      <div class="flex flex-col items-start justify-start">
+        <img
+          src="/images/me.jpg"
+          alt="Profile Picture"
+          class="w-32 h-32 rounded-full mb-4 border-4 border-primary"
+        />
+        <div class="flex flex-col text-start">
+          <h1 class="text-4xl font-space font-bold mb-4 text-gray-300">
+            Product (Full Stack) Engineer
+          </h1>
+          <div class="flex items-center space-x-4 mb-4">
+            <h2 class="text-xl text-dark-200 font-space">Milos Arsic</h2>
+            <a
+              href="https://github.com/marsic3"
+              class="text-gray-400 hover:text-gray-300"
+              target="_blank"
+            >
+              <Github size={20} />
+            </a>
+            <a
+              href="https://x.com/marsic33"
+              class="text-gray-400 hover:text-gray-300"
+              target="_blank"
+            >
+              <Twitter size={20} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/milos-arsic-292b49142/"
+              class="text-gray-400 hover:text-gray-300"
+              target="_blank"
+            >
+              <Linkedin size={20} />
+            </a>
+          </div>
+        </div>
+        <div class="text-gray-500 w-full font-inter">
+          <p class="text-left mb-4 leading-relaxed">
+            As a passionate tech enthusiast, I specialize in building impactful
+            tools and software solutions. Over the years, I've helped transform
+            numerous SaaS products, always with a laser focus on user experience
+            and business value.
+          </p>
+          <div class="collapse-content" id="expandable-content">
+            <p class="text-left mb-4 leading-relaxed">
+              My approach is hands-on and detail-oriented. When tackling a
+              product or feature, I balance deep technical understanding with
+              strategic thinking to deliver exceptional results.
+            </p>
+            <p class="text-left mb-4 leading-relaxed">
+              Leadership through example is my core principle. I thrive on
+              collaborating with teams, fostering growth, and maintaining high
+              standards of excellence.
+            </p>
+            <p class="text-left mb-4 leading-relaxed">
+              Currently exploring blockchain technology while continuing to
+              tackle challenging problems in product scaling and user
+              engagement. I'm always ready to embrace new technologies and push
+              the boundaries of what's possible.
+            </p>
+          </div>
+          <button
+            id="toggle-button"
+            class="text-primary hover:text-secondary transition-colors duration-300 mt-2 flex items-center gap-2 mx-auto"
+          >
+            <span>Read More</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 transform transition-transform duration-300"
+              id="chevron-icon"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const content = document.getElementById("expandable-content");
+        const button = document.getElementById("toggle-button");
+        const chevron = document.getElementById("chevron-icon");
+
+        if (content && button && chevron) {
+          // Initialize collapse state
+          content.style.maxHeight = "0px";
+          content.style.overflow = "hidden";
+          content.style.transition = "max-height 0.3s ease-out";
+
+          // Add click event listener
+          button.addEventListener("click", () => {
+            if (content.classList.contains("expanded")) {
+              content.classList.remove("expanded");
+              content.style.maxHeight = "0px";
+              button.querySelector("span").textContent = "Read More";
+              chevron.style.transform = "rotate(0deg)";
+            } else {
+              content.classList.add("expanded");
+              content.style.maxHeight = content.scrollHeight + "px";
+              button.querySelector("span").textContent = "Show Less";
+              chevron.style.transform = "rotate(180deg)";
+            }
+          });
+        }
+      });
+    </script>
+
+    <style>
+      .collapse-content {
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
+    </style>
 
     <section class="mb-16">
       <h2 class="text-2xl font-space font-bold mb-6 text-white">Education</h2>
@@ -51,22 +161,30 @@ const skills = [
     </section>
 
     <section class="mb-16">
-      <h2 class="text-2xl font-space font-bold mb-6 text-white">Skills & Technologies</h2>
+      <h2 class="text-2xl font-space font-bold mb-6 text-white">
+        Skills & Technologies
+      </h2>
       <div class="flex flex-wrap gap-3">
-        {skills.map(skill => (
-          <span class="px-4 py-2 bg-dark-800 text-primary rounded-full border border-dark-700">
-            {skill}
-          </span>
-        ))}
+        {
+          skills.map((skill) => (
+            <span class="px-4 py-2 bg-dark-800 text-primary rounded-full border border-dark-700">
+              {skill}
+            </span>
+          ))
+        }
       </div>
     </section>
 
     <section class="mb-16">
-      <h2 class="text-2xl font-space font-bold mb-8 text-white">Professional Journey</h2>
+      <h2 class="text-2xl font-space font-bold mb-8 text-white">
+        Professional Journey
+      </h2>
       <div class="space-y-6">
-        {experiences.map(experience => (
-          <ExperienceCard experience={experience} />
-        ))}
+        {
+          experiences.map((experience) => (
+            <ExperienceCard experience={experience} />
+          ))
+        }
       </div>
     </section>
   </div>

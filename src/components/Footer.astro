@@ -1,13 +1,49 @@
 ---
 const currentYear = new Date().getFullYear();
+
+// Add social links data for easier maintenance
+const socialLinks = [
+  {
+    name: "GitHub",
+    url: "https://github.com/yourusername",
+    icon: "i-mdi-github",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://linkedin.com/in/yourusername",
+    icon: "i-mdi-linkedin",
+  },
+  {
+    name: "Twitter",
+    url: "https://twitter.com/yourusername",
+    icon: "i-mdi-twitter",
+  },
+];
 ---
-<footer class="py-8 px-4 bg-dark-800 border-t border-dark-700">
-  <div class="max-w-4xl mx-auto text-center">
-    <p class="text-gray-400 font-space">© {currentYear} Your Name. All rights reserved.</p>
-    <div class="mt-4 space-x-6">
-      <a href="https://github.com/yourusername" class="text-gray-400 hover:text-primary transition-colors">GitHub</a>
-      <a href="https://linkedin.com/in/yourusername" class="text-gray-400 hover:text-primary transition-colors">LinkedIn</a>
-      <a href="https://twitter.com/yourusername" class="text-gray-400 hover:text-primary transition-colors">Twitter</a>
+
+<footer class="border-t border-zinc-800 py-12">
+  <div class="container flex flex-col items-center gap-8">
+    <div class="flex items-center space-x-6">
+      {
+        socialLinks.map(({ name, url, icon }) => (
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-zinc-400 hover:text-white transition-colors duration-200 text-xl"
+            aria-label={name}
+          >
+            <span class={icon} />
+          </a>
+        ))
+      }
     </div>
+    <p class="text-zinc-400 text-sm">
+      © {currentYear} Your Name. Built with <a
+        href="https://astro.build"
+        class="text-white hover:text-zinc-300 transition-colors duration-200"
+        >Astro</a
+      >
+    </p>
   </div>
 </footer>

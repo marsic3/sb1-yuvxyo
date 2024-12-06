@@ -10,30 +10,35 @@ export const experiences: Experience[] = [
     company: "Pdftools",
     role: "Full Stack Engineer",
     period: "Present",
-    description: "Currently focusing on user acquisition at Pdftools, a Swiss sibling company of SmallPdf."
+    description:
+      "Leading user acquisition initiatives at Pdftools, a Swiss sibling company of SmallPdf. Developing and optimizing web applications using React, TypeScript, and Next.js. Implementing SEO strategies and analytics tracking to improve conversion rates and user engagement across multiple markets. Created a customer portal with self-serve capabilities where users can keep track of their licenses, consumption, deals, and utilities.",
   },
   {
     company: "Looty.fi",
     role: "Co-founder & Full Stack Engineer",
     period: "1 year",
-    description: "Co-founded Looty.fi, a rewarding mechanism on EVM. Enabled layer 2 blockchains including Avalanche and BSC. Managed both product and engineering aspects, achieving significant organic growth through an NFT-based reward system."
+    description:
+      "Co-founded and architected Looty.fi, an innovative blockchain-based reward mechanism on EVM. Integrated multiple layer 2 solutions including Avalanche and BSC for scalability. Led product strategy and engineering teams, driving significant organic user growth through the implementation of an NFT-based reward system. Developed the full stack using React, TypeScript, and Node.js.",
   },
   {
     company: "Unique VC",
     role: "Full Stack Engineer",
     period: "1 year",
-    description: "Worked on a DAO governance and treasury management platform on Solana blockchain. Built features enabling founders to create and configure DAOs, manage funds securely through governance, and invite participants."
+    description:
+      "Engineered a comprehensive DAO governance and treasury management platform on Solana blockchain. Developed key features enabling founders to create customizable DAOs, implement secure multi-signature fund management through governance protocols, and streamline participant onboarding. Utilized Rust, React, and TypeScript to build a robust and scalable architecture.",
   },
   {
     company: "Lotusflare",
     role: "Software Engineer",
     period: "4 years",
-    description: "Built a B2B customer portal with multi-tenant architecture for mobile operators. Worked with microservices including Charging Specification, Services, Products, Offers, User Management, Analytics, and Reports. Led R&D project building a virtual store in Unreal Engine for showcasing end products."
+    description:
+      "Developed a sophisticated B2B customer portal with multi-tenant architecture for mobile operators. Led development of critical microservices handling Charging Specification, Services, Products, Offers, User Management, Analytics, and Reporting systems. Spearheaded an innovative R&D project, creating an immersive virtual store using Unreal Engine to showcase products, resulting in enhanced customer engagement and improved sales presentations.",
   },
   {
     company: "Vast",
     role: "Technical Project Manager",
     period: "2 years",
-    description: "Managed cross-functional teams in a data insights company focused on cars and retail in the United States. Coordinated between engineering, product, testing teams, and stakeholders."
-  }
+    description:
+      "Led cross-functional teams in a data-driven insights company specializing in automotive and retail sectors across the United States. Orchestrated collaboration between engineering, product, and QA teams while managing stakeholder expectations. Implemented agile methodologies resulting in 30% faster project delivery and improved team efficiency. Managed the successful delivery of multiple high-impact projects affecting millions of users.",
+  },
 ];

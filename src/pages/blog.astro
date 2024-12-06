@@ -1,19 +1,19 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
 const posts = [
   {
     title: "My First Blog Post",
     date: "2024-01-15",
     excerpt: "This is a brief excerpt from my first blog post...",
-    slug: "#"
+    slug: "#",
   },
   {
     title: "Learning New Technologies",
     date: "2024-01-10",
     excerpt: "Sharing my experience learning new tech stacks...",
-    slug: "#"
-  }
+    slug: "#",
+  },
 ];
 ---
 
@@ -21,20 +21,28 @@ const posts = [
   <div class="max-w-4xl mx-auto px-4 py-12">
     <h1 class="text-3xl font-space font-bold mb-8 text-white">Blog Posts</h1>
     <div class="space-y-8">
-      {posts.map(post => (
-        <article class="border-b border-dark-700 pb-8">
-          <h2 class="text-2xl font-space font-semibold mb-2">
-            <a href={post.slug} class="text-white hover:text-primary transition-colors">
-              {post.title}
+      {
+        posts.map((post) => (
+          <article class="border-b border-dark-800 pb-8">
+            <h2 class="text-2xl font-space font-semibold mb-2">
+              <a
+                href={post.slug}
+                class="text-white hover:text-primary transition-colors"
+              >
+                {post.title}
+              </a>
+            </h2>
+            <p class="text-gray-400 text-sm mb-3">{post.date}</p>
+            <p class="text-gray-300">{post.excerpt}</p>
+            <a
+              href={post.slug}
+              class="text-primary hover:text-purple-400 mt-4 inline-block transition-colors"
+            >
+              Read more →
             </a>
-          </h2>
-          <p class="text-gray-400 text-sm mb-3">{post.date}</p>
-          <p class="text-gray-300">{post.excerpt}</p>
-          <a href={post.slug} class="text-primary hover:text-purple-400 mt-4 inline-block transition-colors">
-            Read more →
-          </a>
-        </article>
-      ))}
+          </article>
+        ))
+      }
     </div>
   </div>
 </Layout>

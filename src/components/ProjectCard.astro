@@ -1,5 +1,5 @@
 ---
-import { ExternalLink, Tag } from 'lucide-astro';
+import { ExternalLink } from "lucide-astro";
 
 interface Props {
   title: string;
@@ -10,20 +10,32 @@ interface Props {
 
 const { title, description, tags, link } = Astro.props;
 ---
-<div class="bg-dark-800 rounded-lg p-6 border border-dark-700 hover:border-primary transition-all duration-300 hover-lift group">
+
+<div class="bg-black p-4 border-2 border-dark-800 font-mono">
   <div class="flex justify-between items-start mb-4">
-    <h3 class="text-xl font-space font-bold text-white group-hover:text-primary transition-colors">{title}</h3>
-    <a href={link} class="text-gray-400 hover:text-primary transition-all duration-300 transform hover:rotate-12">
-      <ExternalLink size={20} />
-    </a>
+    <h3 class="text-lg text-dark-800">./projects/{title}</h3>
+    {
+      link && (
+        <a
+          href={link}
+          class="text-gray-100 hover:text-gray-300"
+          target="_blank"
+        >
+          <ExternalLink size={20} />
+        </a>
+      )
+    }
   </div>
-  <p class="text-gray-300 mb-4 font-inter leading-relaxed">{description}</p>
+  <p class="text-gray-300 mb-4 pl-4 border-l-2 border-gray-500">
+    {description}
+  </p>
   <div class="flex flex-wrap gap-2">
-    {tags.map(tag => (
-      <div class="skill-tag flex items-center space-x-1 px-3 py-1 bg-dark-700 rounded-full text-primary text-sm">
-        <Tag size={14} class="transform transition-transform group-hover:rotate-12" />
-        <span>{tag}</span>
-      </div>
-    ))}
+    {
+      tags.map((tag) => (
+        <span class="px-2 py-1 bg-black border border-gray-500 text-gray-500 text-sm">
+          [{tag}]
+        </span>
+      ))
+    }
   </div>
 </div>

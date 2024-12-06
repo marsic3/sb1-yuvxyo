@@ -1,10 +1,10 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import '@fontsource/space-grotesk/400.css';
-import '@fontsource/space-grotesk/700.css';
-import '@fontsource/inter/400.css';
-import '@fontsource/inter/500.css';
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "@fontsource/space-grotesk/400.css";
+import "@fontsource/space-grotesk/700.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
 
 interface Props {
   title: string;
@@ -34,74 +34,53 @@ const { title, description = "Welcome to my portfolio" } = Astro.props;
 
 <style is:global>
   :root {
-    --accent: 139, 92, 246;
-  }
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  .gradient-text {
-    background: linear-gradient(45deg, #8B5CF6, #10B981);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    --accent: 156, 163, 175;
   }
 
-  /* Smooth scrolling */
-  html {
-    scroll-behavior: smooth;
+  body {
+    background-color: black;
+    color: #6b7280;
+    font-family: monospace;
   }
 
-  /* Page transitions */
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
+  /* Add some CRT screen effect */
   main {
-    animation: fadeIn 0.6s ease-out;
-  }
-
-  /* Card hover animations */
-  .hover-lift {
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .hover-lift:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px -10px rgba(139, 92, 246, 0.3);
-  }
-
-  /* Skill tag animations */
-  .skill-tag {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .skill-tag:hover {
-    transform: scale(1.05);
-    background-color: rgba(139, 92, 246, 0.1);
-  }
-
-  /* Link hover effects */
-  .nav-link {
     position: relative;
-    transition: color 0.3s ease;
   }
 
-  .nav-link::after {
-    content: '';
+  main::before {
+    content: " ";
+    display: block;
     position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -2px;
+    top: 0;
     left: 0;
-    background-color: #8B5CF6;
-    transition: width 0.3s ease;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%,
+      rgba(0, 0, 0, 0.25) 50%
+    );
+    background-size: 100% 4px;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0.1;
   }
 
-  .nav-link:hover::after {
-    width: 100%;
+  /* Cursor blink effect */
+  .cursor::after {
+    content: "_";
+    animation: cursor 1s infinite;
+  }
+
+  @keyframes cursor {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
   }
 </style>

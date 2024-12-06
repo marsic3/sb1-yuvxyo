@@ -9,13 +9,13 @@ interface Props {
 const { institution, degree, period, field } = Astro.props;
 ---
 
-<div class="pixel-box mb-8">
-  <div class="flex justify-between items-start mb-4">
+<div class="bg-black p-4 border-2 border-dark-800 font-mono">
+  <div class="flex justify-between items-start">
     <div>
-      <h3 class="text-lg font-pixel text-primary">{institution}</h3>
-      <p class="text-sm text-secondary mt-2">{degree}</p>
-      <p class="text-gray-300 text-sm mt-1">{field}</p>
+      <h3 class="text-lg text-gray-500">$ cat {institution}</h3>
+      <p class="text-gray-500 mt-2 pl-4">> {degree}</p>
+      <p class="text-gray-300 pl-4">> {field}</p>
     </div>
-    <span class="text-xs text-gray-400 font-pixel">{period}</span>
+    <span class="text-gray-400">{period}</span>
   </div>
 </div>
