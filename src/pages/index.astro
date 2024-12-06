@@ -72,23 +72,25 @@ const skills = [
             numerous SaaS products, always with a laser focus on user experience
             and business value.
           </p>
-          <div class="collapse-content" id="expandable-content">
-            <p class="text-left mb-4 leading-relaxed">
-              My approach is hands-on and detail-oriented. When tackling a
-              product or feature, I balance deep technical understanding with
-              strategic thinking to deliver exceptional results.
-            </p>
-            <p class="text-left mb-4 leading-relaxed">
-              Leadership through example is my core principle. I thrive on
-              collaborating with teams, fostering growth, and maintaining high
-              standards of excellence.
-            </p>
-            <p class="text-left mb-4 leading-relaxed">
-              Currently exploring blockchain technology while continuing to
-              tackle challenging problems in product scaling and user
-              engagement. I'm always ready to embrace new technologies and push
-              the boundaries of what's possible.
-            </p>
+          <div class="collapse-content relative" id="expandable-content">
+            <div class="content-wrapper blur-content">
+              <p class="text-left mb-4 leading-relaxed">
+                My approach is hands-on and detail-oriented. When tackling a
+                product or feature, I balance deep technical understanding with
+                strategic thinking to deliver exceptional results.
+              </p>
+              <p class="text-left mb-4 leading-relaxed">
+                Leadership through example is my core principle. I thrive on
+                collaborating with teams, fostering growth, and maintaining high
+                standards of excellence.
+              </p>
+              <p class="text-left mb-4 leading-relaxed">
+                Currently exploring blockchain technology while continuing to
+                tackle challenging problems in product scaling and user
+                engagement. I'm always ready to embrace new technologies and
+                push the boundaries of what's possible.
+              </p>
+            </div>
           </div>
           <button
             id="toggle-button"
@@ -148,6 +150,15 @@ const skills = [
       .collapse-content {
         overflow: hidden;
         transition: max-height 0.3s ease-out;
+      }
+
+      .blur-content {
+        filter: blur(4px);
+        transition: filter 0.3s ease-out;
+      }
+
+      .collapse-content.expanded .blur-content {
+        filter: blur(0);
       }
     </style>
 
