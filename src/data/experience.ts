@@ -32,13 +32,13 @@ export const experiences: Experience[] = [
     role: "Software Engineer",
     period: "4 years",
     description:
-      "Developed a sophisticated B2B customer portal with multi-tenant architecture for mobile operators. Led development of critical microservices handling Charging Specification, Services, Products, Offers, User Management, Analytics, and Reporting systems. Spearheaded an innovative R&D project, creating an immersive virtual store using Unreal Engine to showcase products, resulting in enhanced customer engagement and improved sales presentations.",
+      "Designed and developed a cutting-edge B2B customer portal with a multi-tenant architecture tailored for mobile operators, leveraging Vue.js for a dynamic front-end and PHP for a robust back-end. Focused on integrating key microservices, including Charging Specification, Services, Products, Offers, User Management, Analytics, and Reporting systems, to ensure seamless interoperability and scalability. Directed an innovative R&D initiative to develop an immersive virtual store using Unreal Engine, revolutionizing product showcases and driving enhanced customer engagement, ultimately elevating sales presentations and client satisfaction",
   },
   {
     company: "Vast",
     role: "Technical Project Manager",
     period: "2 years",
     description:
-      "Led cross-functional teams in a data-driven insights company specializing in automotive and retail sectors across the United States. Orchestrated collaboration between engineering, product, and QA teams while managing stakeholder expectations. Implemented agile methodologies resulting in 30% faster project delivery and improved team efficiency. Managed the successful delivery of multiple high-impact projects affecting millions of users.",
+      "Led cross-functional teams at a data-driven insights company specializing in the automotive and retail sectors across the United States. Facilitated seamless collaboration between engineering, product, and QA teams while effectively managing stakeholder expectations. Introduced and implemented agile methodologies, driving faster project delivery and enhanced team efficiency. Oversaw the successful delivery of multiple high-impact projects, directly influencing the experiences of millions of users.",
   },
 ];

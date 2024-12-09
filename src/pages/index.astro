@@ -73,7 +73,8 @@ const skills = [
             and business value.
           </p>
           <div class="collapse-content relative" id="expandable-content">
-            <div class="content-wrapper blur-content">
+            <div class="blur-gradient"></div>
+            <div class="content-wrapper">
               <p class="text-left mb-4 leading-relaxed">
                 My approach is hands-on and detail-oriented. When tackling a
                 product or feature, I balance deep technical understanding with
@@ -81,8 +82,8 @@ const skills = [
               </p>
               <p class="text-left mb-4 leading-relaxed">
                 Leadership through example is my core principle. I thrive on
-                collaborating with teams, fostering growth, and maintaining high
-                standards of excellence.
+                collaborating with teams, encouraging growth, and maintaining
+                high standards of excellence.
               </p>
               <p class="text-left mb-4 leading-relaxed">
                 Currently exploring blockchain technology while continuing to
@@ -152,13 +153,20 @@ const skills = [
         transition: max-height 0.3s ease-out;
       }
 
-      .blur-content {
-        filter: blur(4px);
-        transition: filter 0.3s ease-out;
+      .blur-gradient {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 40px;
+        background: linear-gradient(to bottom, transparent, rgb(17 17 17 / 1));
+        pointer-events: none;
+        opacity: 1;
+        transition: opacity 0.3s ease-out;
       }
 
-      .collapse-content.expanded .blur-content {
-        filter: blur(0);
+      .collapse-content.expanded .blur-gradient {
+        opacity: 0;
       }
     </style>
 
