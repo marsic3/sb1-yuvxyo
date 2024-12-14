@@ -9,7 +9,7 @@ export const experiences: Experience[] = [
   {
     company: "Pdftools",
     role: "Full Stack Engineer",
-    period: "Present",
+    period: "2 years - Present",
     description:
       "Leading user acquisition initiatives at Pdftools, a Swiss sibling company of SmallPdf. Developing and optimizing web applications using React, TypeScript, and Next.js. Implementing SEO strategies and analytics tracking to improve conversion rates and user engagement across multiple markets. Created a customer portal with self-serve capabilities where users can keep track of their licenses, consumption, deals, and utilities.",
   },
@@ -37,7 +37,7 @@ export const experiences: Experience[] = [
   {
     company: "Vast",
     role: "Technical Project Manager",
-    period: "2 years",
+    period: "1 year",
     description:
       "Led cross-functional teams at a data-driven insights company specializing in the automotive and retail sectors across the United States. Facilitated seamless collaboration between engineering, product, and QA teams while effectively managing stakeholder expectations. Introduced and implemented agile methodologies, driving faster project delivery and enhanced team efficiency. Oversaw the successful delivery of multiple high-impact projects, directly influencing the experiences of millions of users.",
   },
