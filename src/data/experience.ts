@@ -7,7 +7,7 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
-    company: "Pdftools",
+    company: "SmallPDF / Pdftools",
     role: "Full Stack Engineer",
     period: "2 years - Present",
     description:

@@ -5,24 +5,77 @@ import EducationCard from "../components/EducationCard.astro";
 import { experiences } from "../data/experience";
 import { Github, Linkedin, Mail, Twitter } from "lucide-astro";
 
-const skills = [
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "PostgreSQL",
-  "MongoDB",
-  "Solana",
-  "EVM",
-  "Blockchain",
-  "AI",
-  "Growth",
-  "CMS",
-  "SEO",
-  "Microservices",
-  "Project Management",
-];
+const skillCategories = {
+  Frontend: {
+    color: "text-blue-400 border-blue-400/30",
+    skills: [
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "JavaScript (ES6+)",
+      "Tailwind CSS",
+      "Redux/Zustand",
+      "WebSockets",
+      "GraphQL",
+    ],
+  },
+  Backend: {
+    color: "text-green-400 border-green-400/30",
+    skills: [
+      "Node.js",
+      "Express.js",
+      "NestJS",
+      "REST APIs",
+      "WebSocket Servers",
+      "Microservices",
+    ],
+  },
+  "Cloud & DevOps": {
+    color: "text-purple-400 border-purple-400/30",
+    skills: ["AWS (EC2, S3, Lambda)", "Docker", "CI/CD", "GitHub Actions"],
+  },
+  Databases: {
+    color: "text-yellow-400 border-yellow-400/30",
+    skills: ["PostgreSQL", "MongoDB", "Redis", "ElasticSearch"],
+  },
+  "AI & ML": {
+    color: "text-pink-400 border-pink-400/30",
+    skills: [
+      "AI APIs",
+      "LLM Integration",
+      "Vector Databases",
+      "AI Agents",
+      "Eliza",
+    ],
+  },
+  Blockchain: {
+    color: "text-orange-400 border-orange-400/30",
+    skills: ["Solana", "EVM"],
+  },
+  "Tools & Practices": {
+    color: "text-cyan-400 border-cyan-400/30",
+    skills: [
+      "Git",
+      "System Design",
+      "API Design",
+      "Agile/Scrum",
+      "Technical Leadership",
+    ],
+  },
+  "Performance & Security": {
+    color: "text-red-400 border-red-400/30",
+    skills: ["Web Security", "Performance Optimization", "OAuth/JWT"],
+  },
+  Business: {
+    color: "text-indigo-400 border-indigo-400/30",
+    skills: [
+      "Project Management",
+      "Technical Writing",
+      "SEO",
+      "Growth Strategy",
+    ],
+  },
+};
 ---
 
 <Layout title="Product Engineer - Portfolio">
@@ -67,85 +120,54 @@ const skills = [
         </div>
         <div class="text-gray-500 w-full font-inter">
           <p class="text-left mb-4 leading-relaxed">
-            As a passionate tech enthusiast, I specialize in building impactful
-            tools and software solutions. Over the years, I've helped transform
-            numerous SaaS products, always with a laser focus on user experience
-            and business value.
+            I'm a Senior Software Engineer with more than 8 years of experience
+            specializing in JavaScript and TypeScript development across client,
+            server, and runtime environments. My expertise spans building
+            sophisticated applications, extensions, bots, and AI agents, with
+            recent focus on LLM integration and AI technology.
           </p>
           <div class="collapse-content relative" id="expandable-content">
-            <div class="blur-gradient"></div>
             <div class="content-wrapper">
               <p class="text-left mb-4 leading-relaxed">
-                My approach is hands-on and detail-oriented. When tackling a
-                product or feature, I balance deep technical understanding with
-                strategic thinking to deliver exceptional results.
+                As a technical leader, I've played a pivotal role in
+                transforming numerous SaaS products, combining deep technical
+                expertise with strategic thinking to deliver exceptional
+                business value. My experience includes developing scalable
+                solutions that consistently prioritize user experience and
+                measurable impact.
               </p>
               <p class="text-left mb-4 leading-relaxed">
-                Leadership through example is my core principle. I thrive on
-                collaborating with teams, encouraging growth, and maintaining
-                high standards of excellence.
+                I take a hands-on, detail-oriented approach to software
+                development, balancing technical excellence with practical
+                business outcomes. I lead through example - coding alongside my
+                team, sharing knowledge, and setting high standards through my
+                own work. This approach naturally creates a collaborative
+                environment where excellence and continuous improvement are part
+                of our daily practice.
               </p>
               <p class="text-left mb-4 leading-relaxed">
-                Currently exploring blockchain technology while continuing to
-                tackle challenging problems in product scaling and user
-                engagement. I'm always ready to embrace new technologies and
-                push the boundaries of what's possible.
+                My technical portfolio demonstrates versatility across
+                full-stack development, with particular strength in:
+              </p>
+              <ul class="list-disc list-inside text-left mb-4 leading-relaxed">
+                <li>
+                  Building and scaling complex TypeScript/JavaScript
+                  applications
+                </li>
+                <li>Developing AI-powered solutions and LLM integrations</li>
+                <li>Creating custom extensions, bots, and automation tools</li>
+                <li>Architecting robust server-side applications</li>
+              </ul>
+              <p class="text-left mb-4 leading-relaxed">
+                Currently, I'm expanding my expertise in AI technologies while
+                tackling challenges in product scaling and user engagement,
+                always staying at the forefront of technological innovation.
               </p>
             </div>
           </div>
-          <button
-            id="toggle-button"
-            class="text-primary hover:text-gray-300 transition-colors duration-300 mt-2 flex items-center gap-2 mx-auto"
-          >
-            <span>Read More</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4 transform transition-transform duration-300"
-              id="chevron-icon"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
         </div>
       </div>
     </section>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const content = document.getElementById("expandable-content");
-        const button = document.getElementById("toggle-button");
-        const chevron = document.getElementById("chevron-icon");
-
-        if (content && button && chevron) {
-          // Initialize collapse state
-          content.style.maxHeight = "0px";
-          content.style.overflow = "hidden";
-          content.style.transition = "max-height 0.3s ease-out";
-
-          // Add click event listener
-          button.addEventListener("click", () => {
-            if (content.classList.contains("expanded")) {
-              content.classList.remove("expanded");
-              content.style.maxHeight = "0px";
-              button.querySelector("span").textContent = "Read More";
-              chevron.style.transform = "rotate(0deg)";
-            } else {
-              content.classList.add("expanded");
-              content.style.maxHeight = content.scrollHeight + "px";
-              button.querySelector("span").textContent = "Show Less";
-              chevron.style.transform = "rotate(180deg)";
-            }
-          });
-        }
-      });
-    </script>
 
     <style>
       .collapse-content {
@@ -184,15 +206,24 @@ const skills = [
       <h2 class="text-2xl font-space font-bold mb-6 text-white">
         Skills & Technologies
       </h2>
-      <div class="flex flex-wrap gap-3">
-        {
-          skills.map((skill) => (
-            <span class="px-4 py-2 bg-dark-800 text-primary rounded-full border border-dark-700">
-              {skill}
-            </span>
-          ))
-        }
-      </div>
+      {
+        Object.entries(skillCategories).map(([category, { color, skills }]) => (
+          <div class="mb-6">
+            <h3 class="text-lg font-space font-semibold mb-3 text-gray-300">
+              {category}
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              {skills.map((skill) => (
+                <span
+                  class={`px-4 py-2 bg-dark-800 rounded-full border ${color}`}
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))
+      }
     </section>
 
     <section class="mb-16">
