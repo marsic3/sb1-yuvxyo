@@ -18,14 +18,14 @@ export const experiences: Experience[] = [
     role: "Co-founder & Full Stack Engineer",
     period: "1 year",
     description:
-      "Co-founded and architected Looty.fi, an innovative blockchain-based reward mechanism on EVM. Integrated multiple layer 2 solutions including Avalanche and BSC for scalability. Led product strategy and engineering teams, driving significant organic user growth through the implementation of an NFT-based reward system. Developed the full stack using React, TypeScript, and Node.js.",
+      "Co-founded and architected Looty.fi, an innovative blockchain integration across multiple EVM networks. Implemented cross-chain solutions by integrating Layer 2 networks including Avalanche and BSC, designing efficient bridge mechanisms for seamless asset transfers. Integrated smart contracts for the NFT-based reward system, ensuring secure token economics and cross-chain compatibility. Built comprehensive Web3 integration layer using ethers.js and Web3.js, connecting React frontend with on-chain functionality.",
   },
   {
     company: "Unique VC",
     role: "Full Stack Engineer",
     period: "1 year",
     description:
-      "Engineered a comprehensive DAO governance and treasury management platform on Solana blockchain. Developed key features enabling founders to create customizable DAOs, implement secure multi-signature fund management through governance protocols, and streamline participant onboarding. Utilized Rust, React, and TypeScript to build a robust and scalable architecture.",
+      "Led blockchain integration for a comprehensive DAO platform on Solana, implementing complex treasury management systems and governance protocols. Implemented wallet integrations including Phantom and Solflare, while ensuring secure transaction handling and signature verification as well as KYC/AML compliance.",
   },
   {
     company: "Lotusflare",
