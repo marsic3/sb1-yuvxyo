@@ -4,6 +4,7 @@ import ExperienceCard from "../components/ExperienceCard.astro";
 import EducationCard from "../components/EducationCard.astro";
 import { experiences } from "../data/experience";
 import { Github, Linkedin, Mail, Twitter } from "lucide-astro";
+import { marked } from "marked";
 
 const skillCategories = {
   Frontend: {
@@ -84,13 +85,76 @@ const skillCategories = {
     ],
   },
 };
+
+const introText = marked.parse(`
+**Senior Software Engineer** with 8+ years of experience specializing in JavaScript and TypeScript development. 
+Core expertise in client-server architectures and runtime environments, building sophisticated applications, 
+extensions, bots, and AI agents. Currently focused on **LLM integration**, **AI technology**, and **blockchain development**.
+`);
+
+const leadershipText = marked.parse(`
+As a **Technical Leader**, I transform SaaS products and blockchain platforms through strategic 
+technical leadership. Proven track record of delivering scalable solutions with exceptional 
+user experience and measurable business impact.
+`);
+
+const blockchainText = marked.parse(`
+### Blockchain Expertise
+
+Architect and integrator of multi-chain solutions across **EVM** and **Solana** ecosystems. 
+Specialized in:
+
+- Cross-chain bridge implementation
+- Smart contract development
+- DeFi platform architecture
+- DAO governance systems
+- Web3 technologies
+- Token economics design
+- Blockchain security
+`);
+
+const approachText = marked.parse(`
+### Leadership Approach
+
+Hands-on technical leader emphasizing:
+
+- Code-first leadership
+- Knowledge sharing
+- High technical standards
+- Collaborative excellence
+- Continuous improvement
+`);
+
+const strengthsText = marked.parse(`
+### Core Technical Strengths
+
+- **Full-Stack Development**: Complex TypeScript/JavaScript applications
+- **AI Integration**: LLM solutions and AI-powered systems
+- **Automation**: Custom extensions, bots, and tools
+- **Backend**: Robust server-side architectures
+- **Blockchain**: dApps on EVM and Solana
+- **Web3**: Cross-chain solutions and smart contract systems
+- **DeFi**: Protocol integration and wallet systems
+- **Architecture**: Token economics and DeFi mechanisms
+`);
+
+const focusText = marked.parse(`
+### Current Focus
+
+Expanding expertise in:
+
+- AI technologies
+- Cross-chain interoperability
+- DeFi innovations
+- Scalable Web3 architectures
+- Product scaling
+- User engagement optimization
+`);
 ---
 
 <Layout title="Product Engineer - Portfolio">
   <div class="max-w-4xl mx-auto px-4 py-12">
-    <section
-      class="flex flex-col items-start justify-between text-center mb-16"
-    >
+    <section class="flex flex-col items-start justify-between text-start mb-16">
       <div class="flex flex-col items-start justify-start">
         <img
           src="/images/me.jpg"
@@ -101,169 +165,216 @@ const skillCategories = {
           <h1 class="text-4xl font-space font-bold mb-4 text-gray-300">
             Product Engineer
           </h1>
-          <div class="flex items-center space-x-4 mb-4">
+          <div class="flex w-full justify-between items-center space-x-4 mb-4">
             <h2 class="text-xl text-dark-200 font-space">Milos Arsic</h2>
-            <a
-              href="https://github.com/marsic3"
-              class="text-gray-400 hover:text-gray-300"
-              target="_blank"
-            >
-              <Github size={20} />
-            </a>
-            <a
-              href="https://x.com/marsic33"
-              class="text-gray-400 hover:text-gray-300"
-              target="_blank"
-            >
-              <Twitter size={20} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/milos-arsic-292b49142/"
-              class="text-gray-400 hover:text-gray-300"
-              target="_blank"
-            >
-              <Linkedin size={20} />
-            </a>
+            <div class="flex items-center space-x-4">
+              <a
+                href="https://github.com/marsic3"
+                class="text-gray-400 hover:text-gray-300"
+                target="_blank"
+              >
+                <Github size={20} />
+              </a>
+              <a
+                href="https://x.com/marsic33"
+                class="text-gray-400 hover:text-gray-300"
+                target="_blank"
+              >
+                <Twitter size={20} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/milos-arsic-292b49142/"
+                class="text-gray-400 hover:text-gray-300"
+                target="_blank"
+              >
+                <Linkedin size={20} />
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="text-gray-500 w-full font-inter">
-          <p class="text-left mb-4 leading-relaxed">
-            I'm a Senior Software Engineer with more than 8 years of experience
-            specializing in JavaScript and TypeScript development across client,
-            server, and runtime environments. My expertise spans building
-            sophisticated applications, extensions, bots, and AI agents, with
-            recent focus on LLM integration, AI technology, and blockchain
-            development.
-          </p>
-          <div class="collapse-content relative" id="expandable-content">
-            <div class="content-wrapper">
-              <p class="text-left mb-4 leading-relaxed">
-                As a technical leader, I've played a pivotal role in
-                transforming numerous SaaS products and blockchain platforms,
-                combining deep technical expertise with strategic thinking to
-                deliver exceptional business value. My experience includes
-                developing scalable solutions that consistently prioritize user
-                experience and measurable impact.
-              </p>
-              <p class="text-left mb-4 leading-relaxed">
-                In the blockchain space, I've architected and integrated
-                solutions across multiple ecosystems, including EVM-compatible
-                chains and Solana. My work spans from implementing cross-chain
-                bridges and smart contracts to building comprehensive DeFi
-                platforms and DAO governance systems. I have extensive
-                experience with Web3 technologies, token economics, and
-                blockchain security best practices.
-              </p>
-              <p class="text-left mb-4 leading-relaxed">
-                I take a hands-on, detail-oriented approach to software
-                development, balancing technical excellence with practical
-                business outcomes. I lead through example - coding alongside my
-                team, sharing knowledge, and setting high standards through my
-                own work. This approach naturally creates a collaborative
-                environment where excellence and continuous improvement are part
-                of our daily practice.
-              </p>
-              <p class="text-left mb-4 leading-relaxed">
-                My technical portfolio demonstrates versatility across
-                full-stack development, with particular strength in:
-              </p>
-              <ul class="list-disc list-inside text-left mb-4 leading-relaxed">
-                <li>
-                  Building and scaling complex TypeScript/JavaScript
-                  applications
-                </li>
-                <li>Developing AI-powered solutions and LLM integrations</li>
-                <li>Creating custom extensions, bots, and automation tools</li>
-                <li>Architecting robust server-side applications</li>
-                <li>Building decentralized applications on EVM and Solana</li>
-                <li>
-                  Implementing cross-chain solutions and smart contract systems
-                </li>
-                <li>Integrating Web3 protocols and wallet systems</li>
-                <li>Developing secure token economics and DeFi mechanisms</li>
-              </ul>
-              <p class="text-left mb-4 leading-relaxed">
-                Currently, I'm expanding my expertise in AI technologies and
-                blockchain development, focusing on cross-chain
-                interoperability, DeFi innovations, and scalable Web3
-                architectures, while tackling challenges in product scaling and
-                user engagement, always staying at the forefront of
-                technological innovation.
-              </p>
+          <div
+            class="text-gray-500 w-full font-inter prose prose-invert prose-gray max-w-none"
+          >
+            <div
+              class="text-left leading-relaxed bg-black p-4 border-2 border-b-0 border-dark-800 font-mono"
+              set:html={introText}
+            />
+            <div class="relative" id="expandable-content">
+              <div class="">
+                <div
+                  class="text-left leading-relaxed bg-black p-4 border-2 border-b-0 border-dark-800 font-mono"
+                  set:html={leadershipText}
+                />
+                <div
+                  class="text-left leading-relaxed bg-black p-4 border-2 border-b-0 border-dark-800 font-mono"
+                  set:html={blockchainText}
+                />
+                <div
+                  class="text-left leading-relaxed bg-black p-4 border-2 border-b-0 border-dark-800 font-mono"
+                  set:html={approachText}
+                />
+                <div
+                  class="text-left leading-relaxed bg-black p-4 border-2 border-b-0 border-dark-800 font-mono"
+                  set:html={strengthsText}
+                />
+                <div
+                  class="text-left leading-relaxed bg-black p-4 border-2 border-dark-800 font-mono"
+                  set:html={focusText}
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <style>
-      .collapse-content {
-        overflow: hidden;
-        transition: max-height 0.3s ease-out;
-      }
-
-      .blur-gradient {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 40px;
-        background: linear-gradient(to bottom, transparent, rgb(17 17 17 / 1));
-        pointer-events: none;
-        opacity: 1;
-        transition: opacity 0.3s ease-out;
-      }
-
-      .collapse-content.expanded .blur-gradient {
-        opacity: 0;
-      }
-    </style>
-
-    <section class="mb-16">
-      <h2 class="text-2xl font-space font-bold mb-6 text-white">Education</h2>
-      <EducationCard
-        institution="Faculty of Organizational Sciences"
-        degree="Bachelor's Degree"
-        field="Computer Science"
-        period="2013 - 2019"
-      />
-    </section>
-
-    <section class="mb-16">
-      <h2 class="text-2xl font-space font-bold mb-6 text-white">
-        Skills & Technologies
-      </h2>
-      {
-        Object.entries(skillCategories).map(([category, { color, skills }]) => (
-          <div class="mb-6">
-            <h3 class="text-lg font-space font-semibold mb-3 text-gray-300">
-              {category}
-            </h3>
-            <div class="flex flex-wrap gap-3">
-              {skills.map((skill) => (
-                <span
-                  class={`px-4 py-2 bg-dark-800 rounded-full border ${color}`}
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))
-      }
-    </section>
-
-    <section class="mb-16">
-      <h2 class="text-2xl font-space font-bold mb-8 text-white">
-        Professional Journey
-      </h2>
-      <div class="space-y-6">
-        {
-          experiences.map((experience) => (
-            <ExperienceCard experience={experience} />
-          ))
+      <style>
+        .collapse-content {
+          overflow: hidden;
+          transition: max-height 0.3s ease-out;
         }
-      </div>
+
+        .blur-gradient {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 40px;
+          background: linear-gradient(
+            to bottom,
+            transparent,
+            rgb(17 17 17 / 1)
+          );
+          pointer-events: none;
+          opacity: 1;
+          transition: opacity 0.3s ease-out;
+        }
+
+        .collapse-content.expanded .blur-gradient {
+          opacity: 0;
+        }
+      </style>
+
+      <style is:global>
+        /* Base markdown container */
+        .prose {
+          color: #64748b; /* Base text color - slate-500 */
+        }
+
+        /* Headers */
+        .prose h3 {
+          color: #e2e8f0; /* slate-200 */
+          font-size: 1.25rem;
+          font-weight: 600;
+          /* margin-top: 1rem; */
+          margin-bottom: 0.5rem;
+          /* border-bottom: 1px solid #1e293b; slate-800 */
+          padding-bottom: 0.25rem;
+        }
+
+        /* Strong/Bold text */
+        .prose strong {
+          color: #e2e8f0; /* slate-200 */
+          font-weight: 600;
+        }
+
+        /* Lists */
+        .prose ul {
+          list-style-type: none;
+          padding-left: 0.75rem;
+        }
+
+        .prose ul li {
+          margin-top: 0.375rem;
+          position: relative;
+        }
+
+        .prose ul li::before {
+          content: "›";
+          color: #94a3b8; /* slate-400 */
+          position: absolute;
+          left: -0.75rem;
+        }
+
+        /* Paragraphs */
+        .prose p {
+          margin-bottom: 0.75rem;
+          line-height: 1.5;
+        }
+
+        /* Section spacing */
+
+        /* Special sections */
+        .content-wrapper > div {
+          border-left: 2px solid #94a3b8; /* slate-400 */
+          position: relative;
+          overflow: hidden;
+        }
+
+        /* Enhanced hover effects */
+        /* .content-wrapper > div:hover {
+        background: rgba(15, 23, 42, 0.8);
+        transform: translateX(4px) translateY(-1px);
+        border-left-width: 3px;
+        box-shadow:
+          0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      } */
+
+        /* Introduction text special styling */
+
+        /* Smooth transitions for all interactive elements */
+        .prose * {
+          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+      </style>
+
+      <section class="my-16 w-full flex flex-col items-start justify-start">
+        <h2 class="text-2xl font-space font-bold mb-6 text-white">Education</h2>
+        <EducationCard
+          institution="Faculty of Organizational Sciences"
+          degree="Bachelor's Degree"
+          field="Computer Science"
+          period="2013 - 2019"
+        />
+      </section>
+
+      <section class="mb-16">
+        <h2 class="text-2xl font-space font-bold mb-6 text-white">
+          Skills & Technologies
+        </h2>
+        {
+          Object.entries(skillCategories).map(
+            ([category, { color, skills }]) => (
+              <div class="mb-6">
+                <h3 class="text-lg font-space font-semibold mb-3 text-gray-300">
+                  {category}
+                </h3>
+                <div class="flex flex-wrap gap-3">
+                  {skills.map((skill) => (
+                    <span
+                      class={`px-4 py-2 bg-dark-800 rounded-full border ${color}`}
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )
+          )
+        }
+      </section>
+
+      <section class="mb-16">
+        <h2 class="text-2xl font-space font-bold mb-8 text-white">
+          Professional Journey
+        </h2>
+        <div class="space-y-6">
+          {
+            experiences.map((experience) => (
+              <ExperienceCard experience={experience} />
+            ))
+          }
+        </div>
+      </section>
     </section>
   </div>
 </Layout>
